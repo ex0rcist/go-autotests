@@ -5,15 +5,18 @@ import (
 )
 
 var (
-	flagAgentBinaryPath  string
-	flagServerBinaryPath string
-	flagTargetSourcePath string
-	flagServerHost       string
-	flagServerPort       string
-	flagServerBaseURL    string
-	flagFileStoragePath  string
-	flagDatabaseDSN      string
-	flagSHA256Key        string
+	flagAgentBinaryPath   string
+	flagServerBinaryPath  string
+	flagTargetSourcePath  string
+	flagServerHost        string
+	flagServerPort        string
+	flagServerBaseURL     string
+	flagFileStoragePath   string
+	flagDatabaseDSN       string
+	flagSHA256Key         string
+	flagBaseProfilePath   string
+	flagResultProfilePath string
+	flagPackageName       string
 )
 
 func init() {
@@ -26,4 +29,7 @@ func init() {
 	flag.StringVar(&flagFileStoragePath, "file-storage-path", "", "path to persistent file storage")
 	flag.StringVar(&flagDatabaseDSN, "database-dsn", "", "connection string to database")
 	flag.StringVar(&flagSHA256Key, "key", "", "sha256 key for hashing")
+	flag.StringVar(&flagBaseProfilePath, "base-profile-path", "", "path to base pprof profile")
+	flag.StringVar(&flagResultProfilePath, "result-profile-path", "", "path to result pprof profile")
+	flag.StringVar(&flagPackageName, "package-name", "", "name of package to be tested")
 }
